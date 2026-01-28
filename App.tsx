@@ -417,7 +417,7 @@ function App() {
           ) : (
             <div className="text-center py-10 animate-fade-in">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-gray-800 mb-2">¡Qué alegría!</h4>
+              <h4 className="text-xl font-bold text-gray-800 mb-2">¡Que alegría!</h4>
               <p className="text-gray-600">Gracias por confirmar tu asistencia</p>
             </div>
           )}
