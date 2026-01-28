@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis 15 Años - Valentina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importing elegant fonts for the floral theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+      h1, h2, h3, .script-font {
+        font-family: 'Dancing Script', cursive;
+      }
+      h4, h5, h6, .serif-font {
+        font-family: 'Playfair Display', serif;
+      }
+      
+      /* Main body background - soft off-white like reference */
+      .floral-pattern {
+        background-color: #faf7f5;
+        position: relative;
+      }
+
+      /* Floral decoration - left side pink flowers like the reference */
+      .floral-decoration {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 180px;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 10;
+        background-repeat: repeat-y;
+        background-size: 180px auto;
+        background-position: left top;
+      }
+
+      @media (min-width: 768px) {
+        .floral-decoration {
+          width: 260px;
+          background-size: 260px auto;
+        }
+      }
+
+      /* Hero Specific - clean off-white */
+      .hero-floral-bg {
+        background-color: #faf7f5;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-pink-50 text-gray-700 antialiased overflow-x-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
