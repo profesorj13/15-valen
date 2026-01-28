@@ -13,7 +13,7 @@ export const EVENT_DETAILS = {
   name: "Valentina",
   date: eventDateObj,
   location: "Infinity Eventos",
-  address: "Acceso por Google Maps",
+  address: "Hacé clic para ver la ubicación",
   mapLink: "https://www.google.com/maps/place/Infinity+Eventos/data=!4m2!3m1!1s0x0:0x53e161444ef651f0?sa=X&ved=1t:2428&hl=es-AR&ictx=111",
   dressCode: "Elegante",
   dressCodeDescription: "Se agradece respetar el código de vestimenta.",

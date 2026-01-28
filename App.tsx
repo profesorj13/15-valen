@@ -47,7 +47,7 @@ function App() {
     <div className="min-h-screen floral-pattern pb-20">
 
       {/* --- FLORAL DECORATION (left side, like reference image) --- */}
-      <div className="fixed top-0 left-0 w-[140px] md:w-[220px] h-full pointer-events-none z-10 overflow-hidden opacity-80">
+      <div className="fixed top-0 left-0 w-[140px] md:w-[220px] h-full pointer-events-none z-0 overflow-hidden opacity-80">
         <svg viewBox="0 0 220 900" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" preserveAspectRatio="xMinYMin slice">
           {/* Main stem */}
           <path d="M60 900 C60 750, 50 600, 70 450 C90 300, 40 200, 55 50" stroke="#6b7f5e" strokeWidth="2.5" fill="none" opacity="0.7"/>
@@ -255,13 +255,22 @@ function App() {
         </div>
       </header>
 
+      {/* --- HORIZONTAL IMAGE --- */}
+      <section className="w-full max-w-4xl mx-auto px-4 -mt-4">
+        <div className="rounded-2xl overflow-hidden shadow-lg">
+          <img src="/images/WhatsApp Image 2026-01-28 2.jpeg" alt="Valentina" className="w-full h-48 md:h-72 object-cover" />
+        </div>
+      </section>
+
       {/* --- INTRO QUOTE --- */}
-      <section className="py-20 px-4 text-center max-w-2xl mx-auto">
+      <section className="py-12 px-4 text-center max-w-2xl mx-auto">
         <Heart className="w-8 h-8 text-pink-400 mx-auto mb-6" />
-        <p className="text-xl md:text-2xl text-gray-600 serif-font leading-relaxed italic">
-          "Hay momentos inolvidables que se atesoran en el corazón para siempre, 
-          por eso quiero que compartas conmigo esta noche tan especial."
-        </p>
+        <div className="bg-pink-100/80 backdrop-blur-sm rounded-2xl px-6 py-8 shadow-md border border-pink-200">
+          <p className="text-xl md:text-2xl text-pink-900 serif-font leading-relaxed italic font-medium">
+            "Hay momentos inolvidables que se atesoran en el corazón para siempre,
+            por eso quiero que compartas conmigo esta noche tan especial."
+          </p>
+        </div>
       </section>
 
       {/* --- DETAILS CARDS --- */}
@@ -277,12 +286,7 @@ function App() {
             <h4 className="text-2xl font-bold text-gray-800 text-center serif-font mb-2">
               Sábado, 28 de Febrero
             </h4>
-            <p className="text-center text-gray-500 mb-6">21:00 - 05:00 hs</p>
-            <div className="text-center">
-              <span className="inline-block bg-pink-50 text-pink-700 px-4 py-2 rounded-full text-sm font-semibold">
-                ¡Agendalo!
-              </span>
-            </div>
+            <p className="text-center text-gray-500">21:00 - 05:00 hs</p>
           </div>
 
           {/* LOCATION CARD */}
@@ -320,9 +324,6 @@ function App() {
 
       {/* --- GALLERY --- */}
       <section className="py-16 px-4 max-w-6xl mx-auto">
-        <h3 className="text-4xl text-center text-pink-600 script-font mb-4">Galería de Fotos</h3>
-        <p className="text-center text-gray-500 mb-12">Un pequeño resumen de mis 15 años</p>
-        
         <div className="columns-2 md:columns-3 gap-4 space-y-4">
           {GALLERY_IMAGES.map((src, idx) => (
             <div key={idx} className="break-inside-avoid rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
@@ -339,24 +340,23 @@ function App() {
           <div className="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
           
           <Gift className="w-12 h-12 text-pink-600 mx-auto mb-6" />
-          <h3 className="text-3xl font-bold text-gray-800 serif-font mb-4">Regalos</h3>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            Mi mayor regalo es tu presencia. Pero si deseas hacerme un presente, 
-            habrá un buzón para sobres en la recepción o puedes hacerlo a la siguiente cuenta.
+          <h3 className="text-3xl font-bold text-gray-800 serif-font mb-2">Tu presencia es el mejor regalo</h3>
+          <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+            Si querés dejarme un gesto de amor, podés hacerlo en el siguiente alias
           </p>
           <div className="bg-white/80 p-4 rounded-xl inline-block text-left text-sm text-gray-700">
-            <p><strong>CBU:</strong> 000000321321321</p>
-            <p><strong>Alias:</strong> valentina.mis15.fiesta</p>
+            <p><strong>CBU:</strong> 0000003100013259366409</p>
+            <p><strong>Alias:</strong> valen.ligori</p>
           </div>
         </div>
       </section>
 
       {/* --- RSVP --- */}
       <section className="py-20 px-4 max-w-lg mx-auto" id="rsvp">
+        <h3 className="text-4xl text-center text-pink-600 script-font mb-6">¿Venís?</h3>
         <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border-t-8 border-pink-400">
-          <h3 className="text-4xl text-center text-pink-600 script-font mb-2">Confirmación</h3>
           <p className="text-center text-gray-500 mb-8 text-sm">
-            Por favor confirma tu asistencia antes del 1 de Febrero
+            Confirmá tu asistencia antes del 8 de Febrero
           </p>
 
           {!submitMessage ? (
@@ -374,31 +374,17 @@ function App() {
                 />
               </div>
 
-              <div className="flex gap-4">
-                 <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Asistencia</label>
-                    <select
-                      name="isAttending"
-                      value={rsvpData.isAttending ? 'yes' : 'no'}
-                      onChange={(e) => setRsvpData({...rsvpData, isAttending: e.target.value === 'yes'})}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-gray-50"
-                    >
-                      <option value="yes">¡Sí, voy!</option>
-                      <option value="no">No podré ir</option>
-                    </select>
-                 </div>
-                 <div className="w-24">
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Personas</label>
-                    <input
-                      type="number"
-                      min="1"
-                      max="5"
-                      name="guestsCount"
-                      value={rsvpData.guestsCount}
-                      onChange={handleRsvpChange}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-gray-50"
-                    />
-                 </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Asistencia</label>
+                <select
+                  name="isAttending"
+                  value={rsvpData.isAttending ? 'yes' : 'no'}
+                  onChange={(e) => setRsvpData({...rsvpData, isAttending: e.target.value === 'yes'})}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-gray-50"
+                >
+                  <option value="yes">¡Sí, voy!</option>
+                  <option value="no">No podré ir</option>
+                </select>
               </div>
 
               {rsvpData.isAttending && (
