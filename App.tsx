@@ -47,7 +47,7 @@ function App() {
     <div className="min-h-screen floral-pattern pb-20">
 
       {/* --- FLORAL DECORATION (left side, like reference image) --- */}
-      <div className="fixed top-0 left-0 w-[140px] md:w-[220px] h-full pointer-events-none z-0 overflow-hidden opacity-80">
+      <div className="fixed top-0 left-0 w-[140px] md:w-[220px] h-full pointer-events-none z-10 overflow-hidden opacity-80">
         <svg viewBox="0 0 220 900" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" preserveAspectRatio="xMinYMin slice">
           {/* Main stem */}
           <path d="M60 900 C60 750, 50 600, 70 450 C90 300, 40 200, 55 50" stroke="#6b7f5e" strokeWidth="2.5" fill="none" opacity="0.7"/>
@@ -237,9 +237,6 @@ function App() {
         <div className="absolute bottom-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-pink-300 rounded-tl-full opacity-20 blur-3xl"></div>
 
         <div className="relative z-20 bg-white/60 backdrop-blur-sm p-8 md:p-16 rounded-[3rem] shadow-xl border border-white/80 max-w-3xl mx-auto animate-fade-in-up">
-          <span className="uppercase tracking-[0.3em] text-pink-800 text-sm md:text-lg font-bold drop-shadow-sm mb-4 block">
-            Estás invitado a
-          </span>
           <h1 className="text-6xl md:text-8xl text-pink-600 script-font mb-2 drop-shadow-sm">
             Mis 15 Años
           </h1>
@@ -256,14 +253,14 @@ function App() {
       </header>
 
       {/* --- HORIZONTAL IMAGE --- */}
-      <section className="w-full max-w-4xl mx-auto px-4 -mt-4">
+      <section className="relative z-20 w-full max-w-4xl mx-auto px-4 -mt-4">
         <div className="rounded-2xl overflow-hidden shadow-lg">
           <img src="/images/WhatsApp Image 2026-01-28 2.jpeg" alt="Valentina" className="w-full h-48 md:h-72 object-cover" />
         </div>
       </section>
 
       {/* --- INTRO QUOTE --- */}
-      <section className="py-12 px-4 text-center max-w-2xl mx-auto">
+      <section className="relative z-20 py-12 px-4 text-center max-w-2xl mx-auto">
         <Heart className="w-8 h-8 text-pink-400 mx-auto mb-6" />
         <div className="bg-pink-100/80 backdrop-blur-sm rounded-2xl px-6 py-8 shadow-md border border-pink-200">
           <p className="text-xl md:text-2xl text-pink-900 serif-font leading-relaxed italic font-medium">
@@ -274,7 +271,7 @@ function App() {
       </section>
 
       {/* --- DETAILS CARDS --- */}
-      <section className="py-12 px-4 max-w-5xl mx-auto">
+      <section className="relative z-20 py-12 px-4 max-w-5xl mx-auto">
         <h3 className="text-4xl text-center text-pink-600 script-font mb-12">Cuándo & Dónde</h3>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -313,7 +310,7 @@ function App() {
       </section>
 
       {/* --- DRESS CODE --- */}
-      <section className="py-16 px-4">
+      <section className="relative z-20 py-16 px-4">
         <div className="max-w-xl mx-auto bg-white p-8 rounded-full shadow-lg border border-pink-100 text-center">
            <Shirt className="w-10 h-10 text-pink-500 mx-auto mb-4" />
            <h4 className="text-2xl font-bold text-gray-800 serif-font mb-2">Código de Vestimenta</h4>
@@ -323,9 +320,9 @@ function App() {
       </section>
 
       {/* --- GALLERY --- */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
+      <section className="relative z-20 py-16 px-4 max-w-6xl mx-auto">
         <div className="columns-2 md:columns-3 gap-4 space-y-4">
-          {GALLERY_IMAGES.map((src, idx) => (
+          {GALLERY_IMAGES.filter(src => !src.includes('2026-01-28 2.')).map((src, idx) => (
             <div key={idx} className="break-inside-avoid rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <img src={src} alt={`Gallery ${idx}`} className="w-full h-auto hover:scale-105 transition-transform duration-500" />
             </div>
@@ -334,7 +331,7 @@ function App() {
       </section>
 
       {/* --- GIFTS --- */}
-      <section className="py-16 px-4">
+      <section className="relative z-20 py-16 px-4">
         <div className="max-w-2xl mx-auto bg-pink-100 p-8 md:p-12 rounded-[2rem] text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
           <div className="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
@@ -344,7 +341,7 @@ function App() {
           <p className="text-gray-600 leading-relaxed mb-6 text-sm">
             Si querés dejarme un gesto de amor, podés hacerlo en el siguiente alias
           </p>
-          <div className="bg-white/80 p-4 rounded-xl inline-block text-left text-sm text-gray-700">
+          <div className="bg-white/80 p-4 rounded-xl inline-block text-center text-sm text-gray-700">
             <p><strong>CBU:</strong> 0000003100013259366409</p>
             <p><strong>Alias:</strong> valen.ligori</p>
           </div>
@@ -352,7 +349,7 @@ function App() {
       </section>
 
       {/* --- RSVP --- */}
-      <section className="py-20 px-4 max-w-lg mx-auto" id="rsvp">
+      <section className="relative z-20 py-20 px-4 max-w-lg mx-auto" id="rsvp">
         <h3 className="text-4xl text-center text-pink-600 script-font mb-6">¿Venís?</h3>
         <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border-t-8 border-pink-400">
           <p className="text-center text-gray-500 mb-8 text-sm">
@@ -420,8 +417,8 @@ function App() {
           ) : (
             <div className="text-center py-10 animate-fade-in">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-gray-800 mb-2">¡Mensaje Enviado!</h4>
-              <p className="text-gray-600">{submitMessage}</p>
+              <h4 className="text-xl font-bold text-gray-800 mb-2">¡Qué alegría!</h4>
+              <p className="text-gray-600">Gracias por confirmar tu asistencia</p>
             </div>
           )}
         </div>
