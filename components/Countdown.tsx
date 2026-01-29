@@ -18,13 +18,13 @@ const calculateTimeLeft = (): TimeLeft => {
 };
 
 const TimeUnit: React.FC<{ value: number; label: string }> = ({ value, label }) => (
-  <div className="flex flex-col items-center mx-2 md:mx-4">
-    <div className="w-16 h-16 md:w-24 md:h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-pink-100">
-      <span className="text-xl md:text-3xl font-bold text-pink-600 serif-font">
+  <div className="flex flex-col items-center mx-1 md:mx-4">
+    <div className="w-14 h-14 md:w-24 md:h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-pink-100">
+      <span className="text-lg md:text-3xl font-bold text-pink-600 serif-font">
         {value < 10 ? `0${value}` : value}
       </span>
     </div>
-    <span className="mt-2 text-xs md:text-sm uppercase tracking-widest text-pink-800 font-semibold">
+    <span className="mt-2 text-[10px] md:text-sm uppercase tracking-widest text-pink-800 font-semibold">
       {label}
     </span>
   </div>
@@ -42,7 +42,7 @@ const Countdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center items-center py-8">
+    <div className="flex justify-center items-center py-8">
       <TimeUnit value={timeLeft.days} label="Días" />
       <TimeUnit value={timeLeft.hours} label="Hs" />
       <TimeUnit value={timeLeft.minutes} label="Min" />
