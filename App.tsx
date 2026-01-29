@@ -353,7 +353,7 @@ function App() {
         <h3 className="text-4xl text-center text-pink-600 script-font mb-6">¿Venís?</h3>
         <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border-t-8 border-pink-400">
           <p className="text-center text-gray-500 mb-8 text-sm">
-            Confirmá tu asistencia antes del 8 de Febrero
+            Confirmá tu asistencia antes del 18 de Febrero
           </p>
 
           {!submitMessage ? (
