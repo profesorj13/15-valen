@@ -20,7 +20,7 @@ const calculateTimeLeft = (): TimeLeft => {
 const TimeUnit: React.FC<{ value: number; label: string }> = ({ value, label }) => (
   <div className="flex flex-col items-center mx-1 md:mx-4">
     <div className="w-14 h-14 md:w-24 md:h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-pink-100">
-      <span className="text-lg md:text-3xl font-bold text-pink-600 serif-font">
+      <span className="text-lg md:text-3xl font-bold text-pink-300 serif-font">
         {value < 10 ? `0${value}` : value}
       </span>
     </div>

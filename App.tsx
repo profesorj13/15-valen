@@ -237,7 +237,7 @@ function App() {
         <div className="absolute bottom-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-pink-300 rounded-tl-full opacity-20 blur-3xl"></div>
 
         <div className="relative z-20 bg-white/60 backdrop-blur-sm p-8 md:p-16 rounded-[3rem] shadow-xl border border-white/80 max-w-3xl mx-auto animate-fade-in-up">
-          <h1 className="text-6xl md:text-8xl text-pink-600 script-font mb-2 drop-shadow-sm">
+          <h1 className="text-6xl md:text-8xl text-pink-300 script-font mb-2 drop-shadow-sm">
             Mis 15 Años
           </h1>
           <h2 className="text-4xl md:text-6xl text-pink-900 serif-font mb-8 drop-shadow-sm">
@@ -272,13 +272,13 @@ function App() {
 
       {/* --- DETAILS CARDS --- */}
       <section className="relative z-20 py-12 px-4 max-w-5xl mx-auto">
-        <h3 className="text-4xl text-center text-pink-600 script-font mb-12">Cuándo & Dónde</h3>
+        <h3 className="text-4xl text-center text-pink-300 script-font mb-12">Cuándo & Dónde</h3>
         
         <div className="grid md:grid-cols-2 gap-8">
           {/* DATE CARD */}
           <div className="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-pink-300 transform hover:-translate-y-1 transition-transform duration-300">
             <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Calendar className="text-pink-600 w-8 h-8" />
+              <Calendar className="text-pink-300 w-8 h-8" />
             </div>
             <h4 className="text-2xl font-bold text-gray-800 text-center serif-font mb-2">
               Sábado, 28 de Febrero
@@ -289,7 +289,7 @@ function App() {
           {/* LOCATION CARD */}
           <div className="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-pink-300 transform hover:-translate-y-1 transition-transform duration-300">
              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <MapPin className="text-pink-600 w-8 h-8" />
+              <MapPin className="text-pink-300 w-8 h-8" />
             </div>
             <h4 className="text-2xl font-bold text-gray-800 text-center serif-font mb-2">
               {EVENT_DETAILS.location}
@@ -314,7 +314,7 @@ function App() {
         <div className="max-w-xl mx-auto bg-white p-8 rounded-full shadow-lg border border-pink-100 text-center">
            <Shirt className="w-10 h-10 text-pink-500 mx-auto mb-4" />
            <h4 className="text-2xl font-bold text-gray-800 serif-font mb-2">Código de Vestimenta</h4>
-           <p className="text-pink-600 font-bold mb-2 uppercase tracking-wide">{EVENT_DETAILS.dressCode}</p>
+           <p className="text-pink-300 font-bold mb-2 uppercase tracking-wide">{EVENT_DETAILS.dressCode}</p>
            <p className="text-gray-500 text-sm">{EVENT_DETAILS.dressCodeDescription}</p>
         </div>
       </section>
@@ -336,7 +336,7 @@ function App() {
           <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
           <div className="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
           
-          <Gift className="w-12 h-12 text-pink-600 mx-auto mb-6" />
+          <Gift className="w-12 h-12 text-pink-300 mx-auto mb-6" />
           <h3 className="text-3xl font-bold text-gray-800 serif-font mb-2">Tu presencia es el mejor regalo</h3>
           <p className="text-gray-600 leading-relaxed mb-6 text-sm">
             Si querés dejarme un gesto de amor, podés hacerlo en el siguiente alias
@@ -350,7 +350,7 @@ function App() {
 
       {/* --- RSVP --- */}
       <section className="relative z-20 py-20 px-4 max-w-lg mx-auto" id="rsvp">
-        <h3 className="text-4xl text-center text-pink-600 script-font mb-6">¿Venís?</h3>
+        <h3 className="text-4xl text-center text-pink-300 script-font mb-6">¿Venís?</h3>
         <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border-t-8 border-pink-400">
           <p className="text-center text-gray-500 mb-8 text-sm">
             Confirmá tu asistencia antes del 18 de Febrero
